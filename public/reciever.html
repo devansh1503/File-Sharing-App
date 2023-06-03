@@ -1,0 +1,130 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Files</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Lucida Console;
+            background-color: whitesmoke;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid black;
+        }
+
+        .mainbody {
+            padding: 50px;
+            border-right: 2px solid black;
+        }
+
+        .mainbody h2 {
+            width: 70%;
+        }
+
+        .mainbody button {
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: 10px;
+            border-radius: 25px;
+            margin-top: 50px;
+        }
+
+        .mainbody a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .room {
+            margin-top: 50px;
+        }
+
+        .room * {
+            margin-top: 20px;
+        }
+
+        .master {
+            display: flex;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0%;
+            width: 100vw;
+            background-color: rgb(47, 47, 47);
+            color: white;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .textupload{
+            font-weight: 300;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media screen and (max-width: 800px) {
+            footer {
+                position: sticky;
+                bottom: 0%;
+                padding: 20px;
+            }
+
+            .master {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mainbody {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>File-Share</h1>
+    </div>
+    <div class="master">
+        <div class="mainbody">
+            <h2>
+                Share your files in a secure way over the networks!<br>
+                (Make sure your devices are connected to same networks)
+            </h2>
+            <label for="room-id" style="font-size: 25px;">Enter Room ID:</label>
+            <input id="room-id"
+                style="border:none;background:none;border-bottom: 2px solid black;padding: 10px; font-size: 23px;">
+            <button onclick="createRoom()">Join</button>
+        </div>
+        <div class="Recieve" style="padding: 20px;">
+            <h1>You'll see your Recieved files here!</h1>
+            <div class="file-uploads">
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>All Rights Reserved @devanshabrol 2023</h2>
+    </footer>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="reciever.js"></script>
+</body>
+
+</html>
